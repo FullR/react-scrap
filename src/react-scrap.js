@@ -1,9 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-function last(arr) {
-  return arr[arr.length - 1];
-}
+scrap.wrap = wrap;
 
 export default function scrap(BaseComponent="div", ...rest) {
   const lastArg = last(rest);
@@ -39,4 +37,17 @@ export default function scrap(BaseComponent="div", ...rest) {
       return (<BaseComponent {...props} className={className}/>);
     }
   };
+}
+
+export function wrap(...args) {
+  const lastArg = last(args);
+  if(typeof lastArg === "function") {
+    return scrap(lastArg, args.slice(0, -1));
+  } else {
+    throw new Error("scrap.wrap requires a render function as the last argument");
+  }
+}
+
+function last(arr) {
+  return arr[arr.length - 1];
 }

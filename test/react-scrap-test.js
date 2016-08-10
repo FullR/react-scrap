@@ -46,3 +46,16 @@ describe("react-scrap", function() {
     ).to.equal(true);
   });
 });
+
+describe("react-scrap#wrap", function() {
+  it("should take pass the static, dynamic, and prop names to the passed render function", function() {
+    const Component = scrap.wrap("foo", {a: true, b: false}, "c", (props) => {
+      return (<p {...props}/>);
+    });
+    const wrapper = shallow(<Component className="d">content</Component>);
+
+    expect(
+        wrapper.prop("className")
+    ).to.equal("foo a c d");
+  });
+});
