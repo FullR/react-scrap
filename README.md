@@ -19,6 +19,8 @@ Takes a base component, any number of static class names as strings or objects, 
 ## Example
 
 ```javascript
+import React from "react";
+import ReactDOM from "react-dom";
 import scrap from "react-scrap";
 
 const Button = scrap("button", "btn", ({type="default", disabled}) => [
@@ -40,6 +42,8 @@ function App() {
     </div>
   );
 }
+
+ReactDOM.render(<App/>, document.querySelector("#app-container"));
 ```
 
 renders into:
