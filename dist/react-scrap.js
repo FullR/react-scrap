@@ -54,15 +54,15 @@ function scrap() {
   staticNameString = _classnames2.default.apply(undefined, _toConsumableArray(staticNames));
 
   return function (_React$Component) {
-    _inherits(_class, _React$Component);
+    _inherits(Scrap, _React$Component);
 
-    function _class() {
-      _classCallCheck(this, _class);
+    function Scrap() {
+      _classCallCheck(this, Scrap);
 
-      return _possibleConstructorReturn(this, Object.getPrototypeOf(_class).apply(this, arguments));
+      return _possibleConstructorReturn(this, Object.getPrototypeOf(Scrap).apply(this, arguments));
     }
 
-    _createClass(_class, [{
+    _createClass(Scrap, [{
       key: "render",
       value: function render() {
         var props = this.props;
@@ -84,6 +84,6 @@ function scrap() {
       }
     }]);
 
-    return _class;
+    return Scrap;
   }(_react2.default.Component);
 }
