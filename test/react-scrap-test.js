@@ -26,24 +26,23 @@ describe("react-scrap", function() {
     const AA = scrap("button", "aa");
     const BB = scrap(AA, "bb");
 
-    const wrapperAA = shallow(
-      <AA>some content</AA>
-    );
-
-    const wrapperBB = shallow(
-      <BB>more content</BB>
-    );
+    const wrapperAA = shallow(<AA>some content</AA>);
+    const wrapperBB = shallow(<BB>more content</BB>);
 
     expect(
-      wrapperAA.equals(
-        <button className="aa">some content</button>
-      )
+      wrapperAA.equals(<button className="aa">some content</button>)
     ).to.equal(true);
 
     expect(
-      wrapperBB.equals(
-        <AA className="bb">more content</AA>
-      )
+      wrapperBB.equals(<AA className="bb">more content</AA>)
+    ).to.equal(true);
+  });
+
+  it("should create a blank div component if no arguments are passed", function() {
+    const Component = scrap();
+    const wrapper = shallow(<Component className="foo">bar</Component>);
+    expect(
+      wrapper.equals(<div className="foo">bar</div>)
     ).to.equal(true);
   });
 });

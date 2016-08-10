@@ -20,7 +20,7 @@ export default function scrap(BaseComponent="div", ...rest) {
 
   staticNameString = classNames(...staticNames);
 
-  return class extends React.Component {
+  return class Scrap extends React.Component {
     render() {
       const {props} = this;
       let className;
